@@ -1,14 +1,11 @@
-const addToast = (
-  message,
-  dismiss = 2000,
-  alert = 'alert-success',
-  position = 'top-center',
-) => ({
+const addToast = toast => ({
   type: 'ADD_TOAST',
-  message,
-  dismiss,
-  alert,
-  position,
+  toast: {
+    message: toast.message,
+    dismiss: toast.dismiss || 2000,
+    alert: toast.alert || 'alert-primary',
+    position: toast.position || 'top-center',
+  },
 });
 
 const removeToast = id => ({

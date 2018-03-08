@@ -20,12 +20,7 @@ class Demo extends Component {
   }
 
   onClickAddToast() {
-    this.props.addToast(
-      this.state.fields.message,
-      this.state.fields.dismiss,
-      this.state.fields.alert,
-      this.state.fields.position,
-    );
+    this.props.addToast(this.state.fields);
   }
 
   onChangeInput(e) {

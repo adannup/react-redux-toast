@@ -8,7 +8,7 @@ const toast = (state, action) => {
         dismiss,
         message,
         position,
-      } = action;
+      } = action.toast;
 
       return {
         id: uuidv4(),
