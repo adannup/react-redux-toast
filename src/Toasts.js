@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Toast from './Toast';
+import ToastContainer from './ToastContainer';
+import './Toasts.css';
 
 const Toasts = ({ toasts }) => {
-  // const toastsList = toasts.map(toast => (
-  //   <Toast>{ toast.message }</Toast>
-  // ));
-
+  const toastsList = toasts.map(toast => (
+    <ToastContainer
+      key={toast.id}
+      id={toast.id}
+      dismiss={toast.dismiss}
+      alert={toast.alert}
+    >
+      { toast.message }
+    </ToastContainer>
+  ));
   return (
-    <div>Hola mundo</div>
+    <div className="container-toasts">{toastsList}</div>
   );
 };
 

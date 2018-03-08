@@ -28,7 +28,7 @@ const toasts = (state = [], action) => {
     case 'ADD_TOAST':
       return [...state, toast(undefined, action)];
     case 'REMOVE_TOAST':
-      return state;
+      return state.filter(s => s.id !== action.id);
     default:
       return state;
   }

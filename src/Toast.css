@@ -1,0 +1,42 @@
+.toast-notification {
+  /* background: rgba(0,0,0,0.7); */
+  border-radius: 2px;
+  color: #F2F2F2;
+  font-family: sans-serif;
+  margin: 4px 0;
+  padding: 16px 22px 30px 22px;
+  position: relative;
+  /* width: 100%; */
+}
+
+.alert-success {
+  background: rgba(0, 255, 0, 0.5);
+}
+
+.alert-success::before {
+  content: '\002714';
+  background: rgba(0, 255, 0, 0.4);
+  font-size: 22px;
+  position: absolute;
+  left: -62px;
+  top: 0;
+  bottom: 0;
+  padding: 15px 0 15px 22px;
+  width: 40px;
+}
+
+.alert-primary::before {
+  content: '\002714';
+}
+
+.alert-danger::before {
+  content: '\002716';
+}
+
+.alert-warning::before {
+  content: '\0026a0';
+}
+
+.alert-info::before {
+  content: '\0021';
+}

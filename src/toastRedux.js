@@ -3,8 +3,13 @@ const uuidv4 = require('uuid/v4');
 
 const toast = (state, action) => {
   switch (action.type) {
-    case 'ADD_TOAST':
-      const { alert, dismiss, message, position } = action;
+    case 'ADD_TOAST': {
+      const {
+        alert,
+        dismiss,
+        message,
+        position,
+      } = action;
       return {
         id: uuidv4(),
         alert,
@@ -12,17 +17,18 @@ const toast = (state, action) => {
         message,
         position,
       };
+    }
     default:
       return state;
   }
-}
+};
 
 const toasts = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TOAST':
-      return [...state, toast(undefined, action)]
+      return [...state, toast(undefined, action)];
     case 'REMOVE_TOAST':
-      return state;
+      return state.filter(s => s.id !== action.id);
     default:
       return state;
   }
@@ -42,6 +48,11 @@ const addToast = (
   position,
 });
 
+const removeToast = id => ({
+  type: 'REMOVE_TOAST',
+  id,
+});
+
 const store = createStore(toasts);
 
 store.subscribe(() => {
@@ -49,5 +60,7 @@ store.subscribe(() => {
 });
 
 store.dispatch(addToast('Adding toast notification'));
-
+console.log('---------');
 store.dispatch(addToast('Adding toast notification', 3000, 'alert-info'));
+console.log('---------');
+store.dispatch(removeToast(store.getState()[0].id));

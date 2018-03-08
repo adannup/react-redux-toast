@@ -11,4 +11,12 @@ const addToast = (
   position,
 });
 
-export default addToast;
+const removeToast = id => ({
+  type: 'REMOVE_TOAST',
+  id,
+});
+
+export {
+  addToast,
+  removeToast,
+};
