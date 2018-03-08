@@ -11,7 +11,6 @@ class Toast extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className={`toast-notification ${this.props.alert}`}>{this.props.children}</div>
     );
@@ -22,6 +21,7 @@ Toast.propTypes = {
   children: PropTypes.string.isRequired,
   dismiss: PropTypes.number.isRequired,
   removeToast: PropTypes.func.isRequired,
+  alert: PropTypes.string.isRequired,
 };
 
 export default Toast;
