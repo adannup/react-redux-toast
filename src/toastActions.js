@@ -1,7 +1,7 @@
 const addToast = toast => ({
   type: 'ADD_TOAST',
   toast: {
-    message: toast.message,
+    message: toast.message || 'notification',
     dismiss: toast.dismiss || 2000,
     alert: toast.alert || 'alert-primary',
     position: toast.position || 'top-center',

@@ -9,7 +9,7 @@ class Demo extends Component {
     this.state = {
       fields: {
         dismiss: 2000,
-        message: '',
+        message: 'Text example',
         alert: 'alert-primary',
         position: 'top-center',
       },
