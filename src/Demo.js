@@ -50,13 +50,10 @@ class Demo extends Component {
               <span>Alert:</span>
               <select id="alert" onChange={this.onChangeInput} name="alert" value={this.state.fields.alert}>
                 <option value="alert-primary">primary</option>
-                <option value="alert-secondary">secondary</option>
                 <option value="alert-success">success</option>
                 <option value="alert-danger">danger</option>
                 <option value="alert-warning">warning</option>
                 <option value="alert-info">info</option>
-                <option value="alert-light">light</option>
-                <option value="alert-dark">dark</option>
               </select>
             </label>
             <label htmlFor="position">

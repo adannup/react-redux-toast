@@ -1,6 +1,5 @@
 .toast-notification {
-  /* background: rgba(0,0,0,0.7); */
-  border-radius: 2px;
+  border-radius: 0 2px 2px 0;
   color: #F2F2F2;
   font-family: sans-serif;
   margin: 4px 0;
@@ -9,35 +8,77 @@
   /* width: 100%; */
 }
 
-.alert-success {
-  background: rgba(0, 255, 0, 0.5);
+.alert-success,
+.alert-primary,
+.alert-danger,
+.alert-warning,
+.alert-info {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  animation-name: toast-entrance;
+  opacity: 0;
 }
 
-.alert-success::before {
-  content: '\002714';
-  background: rgba(0, 255, 0, 0.4);
+.alert-success::before,
+.alert-primary::before,
+.alert-danger::before,
+.alert-warning::before,
+.alert-info::before {
+  color: #FFF;
+  border-radius: 2px 0 0 2px;
   font-size: 22px;
   position: absolute;
   left: -62px;
   top: 0;
   bottom: 0;
-  padding: 15px 0 15px 22px;
-  width: 40px;
+  padding: 15px 0;
+  width: 62px;
+  text-align: center;
 }
 
-.alert-primary {
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
+.alert-success::before {
+  content: '\002714';
+  background: rgba(0, 255, 0, 0.5);
+}
+
+.alert-primary::before {
+  content: '\002714';
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .alert-danger::before {
   content: '\002716';
+  background: rgba(255, 0, 0, 0.5);
 }
 
 .alert-warning::before {
   content: '\0026a0';
+  background: rgba(255, 255, 0, 0.7);
 }
 
 .alert-info::before {
   content: '\0021';
+  background: rgba(35, 178, 229, 1);
+}
+
+@keyframes toast-entrance {
+  0% {
+    opacity: 0;
+    left: 100px;
+  }
+  10% {
+    opacity: 1;
+    left: 0;
+  }
+
+  40% {
+    left: 0;
+  }
+  70% {
+    opacity: 1;
+    left: 0;
+  }
+  100% {
+    left: 100px;
+  }
 }

@@ -11,8 +11,14 @@ class Toast extends Component {
   }
 
   render() {
+    const seconds = this.props.dismiss / 1000;
     return (
-      <div className={`toast-notification ${this.props.alert}`}>{this.props.children}</div>
+      <div
+        className={`toast-notification ${this.props.alert}`}
+        style={{ animationDuration: `${seconds}s` }}
+      >
+        {this.props.children}
+      </div>
     );
   }
 }
